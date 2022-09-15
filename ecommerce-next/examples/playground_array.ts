@@ -11,10 +11,30 @@ type CustomArray = {
 
 type CustomArrayAlt<T = string> = {
     [index: number]: T
+}
 
+type CustomObject = {
+    [index: string]: string | number | Person
+}
+
+// Restrictions and type restriction
+// You can make custom type this way
+type CustomObject2<T = any> = {
+    [index: string]: string | number | Person
 }
 
 export default function play() {
+
+const person: CustomObject = {
+    age: "23",
+    name: "Ralph",
+    city: "Guadalajara",
+    occupation: "Gardner",
+    education: "Enrolled in University",
+    person: {
+        name: 'Sahani',
+    }
+}
 
 //     type Type1 = SingleType<string[]>
 //     type Type2 = SingleType<number[]>
